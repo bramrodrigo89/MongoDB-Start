@@ -1,6 +1,8 @@
 import pymongo
 import os
+import env
 
+# MONGODB_URI = os.getenv("MONGO_URI")
 MONGODB_URI = os.getenv("MONGO_URI")
 DBS_NAME = "myTestDB"
 COLLECTION_NAME = "myFirstMDB"
@@ -17,7 +19,6 @@ conn = mongo_connect(MONGODB_URI)
 
 coll = conn[DBS_NAME][COLLECTION_NAME]
 
-print(coll.find())
 documents = coll.find()
 
 for doc in documents:
